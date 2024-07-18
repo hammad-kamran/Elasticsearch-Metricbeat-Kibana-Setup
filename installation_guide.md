@@ -10,7 +10,7 @@ Start by updating the system to ensure all packages are up to date:
 
 ```sh
 sudo dnf update -y
-```
+
 
 ## Step 2: Install Java
 Elasticsearch requires Java. Install OpenJDK 11:
