@@ -153,8 +153,20 @@ Check the status of the Metricbeat service:
 ```sh
 sudo systemctl status metricbeat
 ```
+## Step 6: Open Firewall Ports
+**Install firewalld (if not installed)**
+```sh
+sudo dnf install firewalld -y
+```
+If you have a firewall enabled, you need to allow traffic to the necessary ports:
 
-## Step 6: Configure Elasticsearch, Kibana, and Metricbeat
+```sh
+sudo firewall-cmd --permanent --add-port=9200/tcp
+sudo firewall-cmd --permanent --add-port=5601/tcp
+sudo firewall-cmd --reload
+```
+
+## Step 7: Configure Elasticsearch, Kibana, and Metricbeat
 **Configure Elasticsearch**
 
 Edit the Elasticsearch configuration file:
